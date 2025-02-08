@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>CometChat Widget</title>
+</head>
+<body>
+    <div id="cometchat-widget-container"></div>
+
+    <script src="https://eu.cometchat.io/sdk/js/cometchatwidget.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            CometChatWidget.init({
+                "appID": "2705537826fde676",
+                "appRegion": "EU",
+                "authKey": "814db5cafa89fa71cbd87ad63d364f6591145f34"
+            }).then(response => {
+                CometChatWidget.launch({
+                    "widgetID": "ddb29f32-a666-4f40-a6af-936e937ce619",
+                    "target": "#cometchat-widget-container",
+                    "roundedCorners": "true",
+                    "height": "600px",
+                    "width": "100%"
+                });
+            }).catch(error => {
+                console.error("Error iniciando CometChat:", error);
+            });
+        });
+    </script>
+</body>
+</html>
